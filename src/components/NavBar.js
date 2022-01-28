@@ -1,10 +1,12 @@
+import CartWidget from "./CartWidget";
+
 const NavBar = () => {
   return (
     <>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <div class="container-fluid justify-content-between">
           <a class="navbar-brand" href="#">
-            Navbar
+            AERIAL DRONE
           </a>
           <button
             class="navbar-toggler"
@@ -18,33 +20,34 @@ const NavBar = () => {
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav sticky-top">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
-                  Home
+                <a class="nav-link" href="#">
+                  Inicio
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
-                  Features
+                  Galería
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
-                  Pricing
+                  Servicios
                 </a>
               </li>
               <li class="nav-item">
-                <a
-                  class="nav-link disabled"
-                  href="#"
-                  tabindex="-1"
-                  aria-disabled="true"
-                >
-                  Disabled
+                <a class="nav-link" href="#">
+                  Comprar
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  Contacto
                 </a>
               </li>
             </ul>
+            <CartWidget />
           </div>
         </div>
       </nav>
