@@ -10,7 +10,7 @@ function App() {
           <NavBar />
         </header>
         <main className="main">
-          <ItemListContainer />
+          <ItemListContainer curso="ReactJS" />
         </main>
       </div>
     </>
