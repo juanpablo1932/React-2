@@ -3,13 +3,13 @@ import CartWidget from "./CartWidget";
 const NavBar = () => {
   return (
     <>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-        <div class="container-fluid justify-content-between">
-          <a class="navbar-brand" href="#">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light ">
+        <div className="container-fluid justify-content-between">
+          <a className="navbar-brand" href="#">
             AERIAL DRONE
           </a>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
@@ -17,32 +17,32 @@ const NavBar = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav sticky-top">
-              <li class="nav-item">
-                <a class="nav-link" href="#">
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav sticky-top">
+              <li className="nav-item">
+                <a className="nav-link" href="#">
                   Inicio
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
+              <li className="nav-item">
+                <a className="nav-link" href="#">
                   Galería
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
+              <li className="nav-item">
+                <a className="nav-link" href="#">
                   Servicios
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
+              <li className="nav-item">
+                <a className="nav-link" href="#">
                   Comprar
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
+              <li className="nav-item">
+                <a className="nav-link" href="#">
                   Contacto
                 </a>
               </li>

@@ -44,3 +44,37 @@
 .main {
   margin: 10px;
 }
+
+.itemCount {
+  width: 30%;
+  border: solid;
+  border-radius: 10%;
+}
+
+.cardCount {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardCount h1 {
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 1rem;
+  background-color: #61dafb;
+}
+
+.cardCount p {
+  margin-bottom: 0 !important;
+}
+
+.btnCount {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1rem 0 1rem 0;
+}
+
+.btnCount button {
+  border-radius: 15%;
+  width: 30px;
+}
