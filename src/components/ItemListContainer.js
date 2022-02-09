@@ -1,4 +1,4 @@
-import ItemCount from "./ItemCount";
+import ItemList from "./ItemList";
 
 const ItemListContainer = (props) => {
   return (
@@ -8,7 +8,7 @@ const ItemListContainer = (props) => {
           Esta es la lilsta de items del e-commerce para el curso de{" "}
           {props.curso}.
         </p>
-        <ItemCount stock="5" initial="1" />
+        <ItemList />
       </div>
     </>
   );
