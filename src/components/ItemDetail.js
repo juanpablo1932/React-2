@@ -14,7 +14,7 @@ export default function ItemDetail({ name, costo, stock, vista, description }) {
               <p className="card-text">{description}</p>
               <p className="card-text">Stock: {stock}</p>
               <p className="card-text">Precio: $ {costo} USD</p>
-              <div style={{ width: "50%" }}>
+              <div className="item__count--position">
                 <ItemCount stock={stock} initial="1" />
               </div>
             </div>

@@ -1,18 +1,31 @@
 import { useEffect, useState } from "react";
 import Item from "./Item";
 import { BaseDeDatos, getBaseDeDatos } from "../Basededatos";
+import { useParams } from "react-router-dom";
 
 export default function ItemList() {
   const [fotos, setFotos] = useState([]);
+  const { idClase } = useParams();
+
   useEffect(async () => {
-    try {
-      const data = await getBaseDeDatos(BaseDeDatos, 2000);
-      setFotos(data);
-    } catch (e) {}
-  }, []);
+    if (idClase === undefined) {
+      try {
+        const data = await getBaseDeDatos(BaseDeDatos, 2000);
+        setFotos(data);
+      } catch (e) {}
+    } else {
+      try {
+        const data = await getBaseDeDatos(
+          BaseDeDatos.filter((item) => item.idClase === parseInt(idClase)),
+          2000
+        );
+        setFotos(data);
+      } catch (e) {}
+    }
+  }, [idClase]);
   return (
     <>
-      <div>
+      <div className="row">
         {fotos.map((item) => (
           <Item
             key={item.id}
@@ -20,6 +33,7 @@ export default function ItemList() {
             costo={item.costo}
             stock={item.stock}
             vista={item.vista}
+            id={item.id}
           />
         ))}
       </div>
