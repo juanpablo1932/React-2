@@ -1,6 +1,12 @@
 import ItemCount from "./ItemCount";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function ItemDetail({ name, costo, stock, vista, description }) {
+  const [itemCount, setItemCount] = useState(0);
+  const onAdd = (evt) => {
+    setItemCount(evt);
+  };
   return (
     <>
       <div className="card mb-3" style={{ width: "100%" }}>
@@ -15,7 +21,13 @@ export default function ItemDetail({ name, costo, stock, vista, description }) {
               <p className="card-text">Stock: {stock}</p>
               <p className="card-text">Precio: $ {costo} USD</p>
               <div className="item__count--position">
-                <ItemCount stock={stock} initial="1" />
+                {itemCount === 0 ? (
+                  <ItemCount stock={stock} initial="1" onAdd={onAdd} />
+                ) : (
+                  <Link to="/cart">
+                    <button>GO TO CART</button>
+                  </Link>
+                )}
               </div>
             </div>
           </div>

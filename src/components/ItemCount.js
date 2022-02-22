@@ -1,15 +1,15 @@
 import { useState } from "react";
 
-const ItemCount = (props) => {
+const ItemCount = ({ stock, initial = 1, onAdd }) => {
   const [contador, setContador] = useState(1); //Hook
 
   const increment = () => {
-    if (contador < props.stock) {
+    if (contador < stock) {
       setContador(contador + 1);
     }
   };
   const decrement = () => {
-    if (contador > props.initial) {
+    if (contador > initial) {
       setContador(contador - 1);
     }
   };
@@ -25,6 +25,15 @@ const ItemCount = (props) => {
             <button onClick={increment}>+</button>
           </div>
         </div>
+        {
+          <button
+            onClick={() => onAdd(contador)}
+            type="button"
+            className="btn btn-primary card__buttonCompra"
+          >
+            ADD TO CART
+          </button>
+        }
       </div>
     </>
   );
