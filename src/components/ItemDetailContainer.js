@@ -9,7 +9,7 @@ export default function ItemDetailContainer() {
   useEffect(async () => {
     try {
       const result = await getBaseDeDatos(
-        BaseDeDatos.filter((item) => item.id === id)
+        BaseDeDatos.filter((item) => item.id === parseInt(id))
       );
       // console.log(result);
       setFoto(result);
@@ -21,6 +21,7 @@ export default function ItemDetailContainer() {
         {foto.map((item) => (
           <ItemDetail
             key={item.id}
+            id={item.id}
             name={item.name}
             costo={item.costo}
             stock={item.stock}

@@ -1,3 +1,5 @@
+import { CartContext } from "./CartContext";
+import { useContext } from "react";
 const CartWidget = () => {
   return (
     <>

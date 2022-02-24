@@ -1,6 +1,6 @@
 export const BaseDeDatos = [
   {
-    id: "01",
+    id: 1,
     name: "Condominio",
     costo: 1,
     stock: 5,
@@ -11,7 +11,7 @@ export const BaseDeDatos = [
     idClase: 2,
   },
   {
-    id: "02",
+    id: 2,
     name: "Playa Cristal",
     costo: 1.5,
     stock: 5,
@@ -22,7 +22,7 @@ export const BaseDeDatos = [
     idClase: 1,
   },
   {
-    id: "03",
+    id: 3,
     name: "Playa Cristal",
     costo: 1.3,
     stock: 5,
@@ -33,7 +33,7 @@ export const BaseDeDatos = [
     idClase: 1,
   },
   {
-    id: "04",
+    id: 4,
     name: "Playa del Muerto",
     costo: 2,
     stock: 2,
@@ -44,7 +44,7 @@ export const BaseDeDatos = [
     idClase: 1,
   },
   {
-    id: "05",
+    id: 5,
     name: "Laguna Negra",
     costo: 2,
     stock: 5,
@@ -55,7 +55,7 @@ export const BaseDeDatos = [
     idClase: 1,
   },
   {
-    id: "06",
+    id: 6,
     name: "Nevado del Ruiz",
     costo: 2,
     stock: 5,
@@ -66,7 +66,7 @@ export const BaseDeDatos = [
     idClase: 1,
   },
   {
-    id: "07",
+    id: 7,
     name: "Isla Pelicano",
     costo: 1.5,
     stock: 10,
@@ -77,7 +77,7 @@ export const BaseDeDatos = [
     idClase: 1,
   },
   {
-    id: "08",
+    id: 8,
     name: "Playa Blanca",
     costo: 1.5,
     stock: 10,
@@ -88,7 +88,7 @@ export const BaseDeDatos = [
     idClase: 1,
   },
   {
-    id: "09",
+    id: 9,
     name: "Hotel Cascada",
     costo: 1.2,
     stock: 10,
@@ -99,7 +99,7 @@ export const BaseDeDatos = [
     idClase: 1,
   },
   {
-    id: "10",
+    id: 10,
     name: "Calles Cenital",
     costo: 0.5,
     stock: 20,
@@ -110,7 +110,7 @@ export const BaseDeDatos = [
     idClase: 2,
   },
   {
-    id: "11",
+    id: 11,
     name: "El Rodadero",
     costo: 2,
     stock: 10,
@@ -121,7 +121,7 @@ export const BaseDeDatos = [
     idClase: 1,
   },
   {
-    id: "12",
+    id: 12,
     name: "Santa Rosa de Cabal",
     costo: 1.2,
     stock: 5,
@@ -132,7 +132,7 @@ export const BaseDeDatos = [
     idClase: 1,
   },
   {
-    id: "13",
+    id: 13,
     name: "Calles Nocturnas Cenital",
     costo: 2,
     stock: 2,
@@ -143,7 +143,7 @@ export const BaseDeDatos = [
     idClase: 2,
   },
   {
-    id: "14",
+    id: 14,
     name: "Pereira Nocturna",
     costo: 2.5,
     stock: 1,
