@@ -28,8 +28,31 @@ const CartContextProvider = ({ children }) => {
   const clear = () => {
     setCartList([]);
   };
+  const cantidadTotal = () => {
+    let totalProductos = cartList.map((total) => total.qtyItem);
+    return totalProductos.reduce(
+      (previousValue, currentValue) => previousValue + currentValue,
+      0
+    );
+  };
+  const precioTotal = () => {
+    let totalPrecio = cartList.map((total) => total.costo * total.qtyItem);
+    return totalPrecio.reduce(
+      (previousValue, currentValue) => previousValue + currentValue,
+      0
+    );
+  };
   return (
-    <CartContext.Provider value={{ cartList, addToCart, removeItem, clear }}>
+    <CartContext.Provider
+      value={{
+        cartList,
+        addToCart,
+        removeItem,
+        clear,
+        cantidadTotal,
+        precioTotal,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );
