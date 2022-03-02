@@ -31,9 +31,15 @@ export default function ItemDetail(item) {
                 {itemCount === 0 ? (
                   <ItemCount stock={item.stock} initial="1" onAdd={onAdd} />
                 ) : (
-                  <Link to="/cart">
-                    <button>GO TO CART</button>
-                  </Link>
+                  <>
+                    <Link to="/cart">
+                      <button>Terminar mi compra</button>
+                    </Link>
+                    <Link to="/">
+                      {" "}
+                      <button>Seguir comprando!</button>
+                    </Link>
+                  </>
                 )}
               </div>
             </div>
