@@ -3,7 +3,7 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
 
-export default function ItemDetail(item) {
+export default function ItemDetail({ item }) {
   const [itemCount, setItemCount] = useState(0);
   const test = useContext(CartContext);
   const onAdd = (qty) => {

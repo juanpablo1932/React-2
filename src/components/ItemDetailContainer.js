@@ -1,34 +1,38 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
-import { BaseDeDatos, getBaseDeDatos } from "../Basededatos";
+
 import { useParams } from "react-router-dom";
+
+import { doc, getDoc } from "firebase/firestore";
+import db from "../utils/firebaseConfig";
 
 export default function ItemDetailContainer() {
   const [foto, setFoto] = useState([]);
   const { id } = useParams();
-  useEffect(async () => {
-    try {
-      const result = await getBaseDeDatos(
-        BaseDeDatos.filter((item) => item.id === parseInt(id))
-      );
-      // console.log(result);
-      setFoto(result);
-    } catch (e) {}
+
+  useEffect(() => {
+    const firestoreFetchOne = async (idItem) => {
+      const docRef = doc(db, "Basededatos", idItem);
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        return {
+          id: idItem,
+          ...docSnap.data(),
+        };
+      } else {
+        console.log("No such document!");
+      }
+    };
+    firestoreFetchOne(id)
+      .then((result) => setFoto(result))
+      .catch((err) => console.log(err));
   }, [id]);
+
   return (
     <>
       <div className="m-5">
-        {foto.map((item) => (
-          <ItemDetail
-            key={item.id}
-            id={item.id}
-            name={item.name}
-            costo={item.costo}
-            stock={item.stock}
-            vista={item.vista}
-            description={item.description}
-          />
-        ))}
+        <ItemDetail item={foto} />
       </div>
     </>
   );

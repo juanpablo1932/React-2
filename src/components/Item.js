@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { BaseDeDatos } from "../Basededatos";
 
 export default function Item({ name, costo, stock, vista, id }) {
   return (
