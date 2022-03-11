@@ -1,8 +1,55 @@
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
 import { Link } from "react-router-dom";
+import {
+  serverTimestamp,
+  doc,
+  setDoc,
+  collection,
+  updateDoc,
+  increment,
+} from "firebase/firestore";
+import db from "../utils/firebaseConfig";
 const Cart = () => {
   const test = useContext(CartContext);
+  const createOrder = () => {
+    let order = {
+      buyer: {
+        email: "juandiaz@coder.com",
+        name: "Juan Diaz",
+        phone: "987123",
+      },
+      date: serverTimestamp(),
+      items: test.cartList.map((items) => {
+        return {
+          id: items.idItem,
+          price: items.costo,
+          title: items.name,
+          qty: items.qtyItem,
+        };
+      }),
+      total: test.precioTotal(),
+    };
+    console.log(order);
+
+    const createOrderInFirestore = async () => {
+      const newOrderRef = doc(collection(db, "orders"));
+      await setDoc(newOrderRef, order);
+      return newOrderRef;
+    };
+    createOrderInFirestore()
+      .then((result) => {
+        alert("Your order has been created: " + result.id);
+        test.cartList.map(async (item) => {
+          const itemRef = doc(db, "Basededatos", item.idItem);
+          await updateDoc(itemRef, {
+            stock: increment(-item.qtyItem),
+          });
+        });
+        test.clear();
+      })
+      .catch((error) => console.log(error));
+  };
 
   return (
     <>
@@ -23,6 +70,7 @@ const Cart = () => {
               </p>
               <p>Precio total de la compra: $ {test.precioTotal()} USD</p>
             </section>
+            <button onClick={createOrder}>CHECKOUT NOW</button>
           </>
         ) : (
           <h2>Your cart is empty</h2>
