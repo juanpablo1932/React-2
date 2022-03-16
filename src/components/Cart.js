@@ -30,7 +30,6 @@ const Cart = () => {
       }),
       total: test.precioTotal(),
     };
-    console.log(order);
 
     const createOrderInFirestore = async () => {
       const newOrderRef = doc(collection(db, "orders"));
@@ -82,7 +81,6 @@ const Cart = () => {
               <h2>Nombre: {item.name} </h2>
               <h2>Cantidad: {item.qtyItem} foto(s)</h2>
               <h2>Costo: $ {item.costo} USD</h2>
-              {/* <h2>Id: {item.idItem}</h2> */}
               <button onClick={() => test.removeItem(item.idItem)}>
                 Remove Item
               </button>

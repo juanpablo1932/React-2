@@ -35,10 +35,7 @@ const CartContextProvider = ({ children }) => {
       0
     );
   };
-  // const cantidadTotalIcon = () => {
-  //   let totalIcon = cartList.map((total) => total.qtyItem);
-  //   return totalIcon;
-  // };
+
   const precioTotal = () => {
     let totalPrecio = cartList.map((total) => total.costo * total.qtyItem);
     return totalPrecio.reduce(
@@ -55,7 +52,6 @@ const CartContextProvider = ({ children }) => {
         clear,
         cantidadTotal,
         precioTotal,
-        // cantidadTotalIcon,
       }}
     >
       {children}
