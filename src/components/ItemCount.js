@@ -31,7 +31,7 @@ const ItemCount = ({ stock, initial = 1, onAdd }) => {
             type="button"
             className="btn btn-primary card__buttonCompra"
           >
-            ADD TO CART
+            AÑADIR AL CARRITO
           </button>
         ) : (
           <p>Fotografía agotada</p>

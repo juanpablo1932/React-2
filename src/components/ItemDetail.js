@@ -37,7 +37,7 @@ export default function ItemDetail({ item }) {
                     </Link>
                     <Link to="/">
                       {" "}
-                      <button>Seguir comprando!</button>
+                      <button>Seguir comprando</button>
                     </Link>
                   </>
                 )}

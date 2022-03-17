@@ -53,7 +53,7 @@ const Cart = () => {
   return (
     <>
       <section>
-        <h1>YOU CART</h1>
+        <h1>TU CARRITO</h1>
         <Link to="/">
           {" "}
           <button>Seguir comprando!</button>
@@ -61,7 +61,7 @@ const Cart = () => {
 
         {test.cartList.length > 0 ? (
           <>
-            <button onClick={test.clear}>DELETE ALL PRODUCTS</button>
+            <button onClick={test.clear}>Elimina Todos Los Productos</button>
             <section className="productosDesglose">
               <h1>RESUMEN DE TU COMPRA</h1>
               <p>
@@ -69,10 +69,10 @@ const Cart = () => {
               </p>
               <p>Precio total de la compra: $ {test.precioTotal()} USD</p>
             </section>
-            <button onClick={createOrder}>CHECKOUT NOW</button>
+            <button onClick={createOrder}>¡ COMPRAR AHORA !</button>
           </>
         ) : (
-          <h2>Your cart is empty</h2>
+          <h2>Tu carrito esta vacío</h2>
         )}
         <div className="cart">
           {test.cartList.map((item) => (
@@ -82,7 +82,7 @@ const Cart = () => {
               <h2>Cantidad: {item.qtyItem} foto(s)</h2>
               <h2>Costo: $ {item.costo} USD</h2>
               <button onClick={() => test.removeItem(item.idItem)}>
-                Remove Item
+                Eliminar producto
               </button>
             </div>
           ))}
